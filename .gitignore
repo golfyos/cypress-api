@@ -1,7 +1,4 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/cypressio,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=cypressio,node
-
 ### CypressIO ###
 # gitignore template for the CypressIO, browser test framework
 # website: https://www.cypress.io/
@@ -122,4 +119,5 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# End of https://www.toptal.com/developers/gitignore/api/cypressio,node
+#
+**/.DS_Store
