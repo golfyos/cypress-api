@@ -119,5 +119,5 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-#
+# MacOS
 **/.DS_Store
