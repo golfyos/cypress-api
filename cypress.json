@@ -10,9 +10,10 @@
     "reporterOptions": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
     },
     "video": false,
+    "screenshotOnRunFailure": false,
     "trashAssetsBeforeRuns": true
 }
