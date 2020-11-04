@@ -1,0 +1,18 @@
+{
+    "numTestsKeptInMemory": 0,
+    "testFiles": "**/*.ts",
+    "requestTimeout": 10000,
+    "responseTimeout": 15000,
+    "defaultCommandTimeout": 0,
+    "execTimeout": 0,
+    "pageLoadTimeout": 0,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+    },
+    "video": false,
+    "trashAssetsBeforeRuns": true
+}
