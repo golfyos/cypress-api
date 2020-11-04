@@ -1,0 +1,9 @@
+.gitignore
+.prettierignore
+.prettierrc
+package.json
+package-lock.json
+README.md
+tsconfig.json
+cypress.json
+cypress.env.json
