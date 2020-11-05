@@ -20,7 +20,7 @@ Cypress.Commands.add('call', (uri: string, method: HttpMethod, body: any, header
     const baseUrl = Cypress.env('url')
     const normalizeUrl = combineURLs(baseUrl, uri)
 
-    cy.request({
+    return cy.request({
         url: normalizeUrl,
         method,
         body,
@@ -36,7 +36,7 @@ Cypress.Commands.add('graphql', (graphql: string, headers: HttpRequestHeader = {
     const baseUrl = Cypress.env('url')
     const normalizeUrl = combineURLs(baseUrl, '/')
 
-    cy.request({
+    return cy.request({
         url: normalizeUrl,
         method: HttpMethod.POST,
         body: {
