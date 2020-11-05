@@ -1,14 +1,13 @@
 import { HttpRequestHeader } from '../../../support/commands'
-import { HttpMethod } from '../../../utils/http-method'
+import { getCustomer } from './util'
 
 describe('Login', () => {
     let accessToken: string = ''
 
-    before((done) => {
+    before(() => {
         cy.getAccessToken(Cypress.env('adminEmail'), Cypress.env('adminPassword')).then(
             ({ token }: { token: string }) => {
                 accessToken = token
-                done()
             }
         )
     })
@@ -50,24 +49,24 @@ describe('Login', () => {
         })
     })
 
-    it('should create product success', () => {
-        const uri = '/product/upload/products'
-        const body = {
-            sku: '112112',
-            name: {
-                en: 'test-en',
-                th: 'test-th',
-                cn: 'test-cn',
-            },
-        }
+    it('should get customer fail', () => {
+        const gqlCustomer = getCustomer('1212312121ssoId')
 
-        const headers: HttpRequestHeader = {
-            authorization: accessToken,
-        }
+        cy.graphql(gqlCustomer, { authorization: accessToken }).then((response: Cypress.Response) => {
+            expect(response.status).not.equal(200)
+        })
+    })
 
-        cy.call(uri, HttpMethod.POST, body, headers).then((response: Cypress.Response) => {
+    it('should get customer success', () => {
+        const targetSsoId = '555666'
+        const gqlCustomer = getCustomer(targetSsoId)
+
+        cy.graphql(gqlCustomer, { authorization: accessToken }).then((response: Cypress.Response) => {
+            expect(response.status).equal(200)
+
             const data = response.body.data
-            expect(data).to.exist
+
+            expect(data.ssoId).equal(targetSsoId)
         })
     })
 })
