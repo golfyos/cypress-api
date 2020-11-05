@@ -13,7 +13,8 @@
 		"report:generate": "marge report.json",
 		"report:show": "open mochawesome-report/report.html",
 		"o": "npm run cypress:open",
-		"r": "npm run cypress:run"
+		"r": "npm run cypress:run",
+		"format": "pretty-quick"
 	},
 	"repository": {
 		"type": "git",
