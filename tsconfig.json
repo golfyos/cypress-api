@@ -4,7 +4,10 @@
       "lib": ["es6", "dom"],
       "types": ["cypress", "node"],
       "noImplicitAny": true,
-      "baseUrl": "."
+      "baseUrl": ".",
+      "noEmit": true,
+      "allowJs": false,
+      "allowSyntheticDefaultImports": false
     },
     "include": ["**/*.ts"]
 }
