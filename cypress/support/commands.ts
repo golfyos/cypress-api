@@ -26,7 +26,7 @@ Cypress.Commands.add('call', (uri: string, method: HttpMethod, body: any, header
         body,
         headers: {
             ...defaultHeaders,
-            headers,
+            ...headers,
         },
         encoding: 'utf-8',
     })
@@ -44,18 +44,19 @@ Cypress.Commands.add('graphql', (graphql: string, headers: HttpRequestHeader = {
         },
         headers: {
             ...defaultHeaders,
-            headers,
+            ...headers,
         },
         encoding: 'utf-8',
     })
 })
 
-Cypress.Commands.add('getAccessToken', (username: string, password: string) => {
+Cypress.Commands.add('getAccessToken', (username: string, password: string, headers: HttpRequestHeader = {}) => {
     return cy
         .request({
             url: Cypress.env('url'),
             headers: {
                 ...defaultHeaders,
+                ...headers,
             },
             method: HttpMethod.POST,
             body: {
