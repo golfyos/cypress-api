@@ -1,13 +1,15 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["es6", "dom"],
-      "types": ["cypress", "node"],
-      "noImplicitAny": true,
-      "baseUrl": ".",
-      "noEmit": true,
-      "allowJs": false,
-      "allowSyntheticDefaultImports": false
-    },
-    "include": ["**/*.ts"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "types": ["cypress", "node"],
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "noEmit": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"]
 }
